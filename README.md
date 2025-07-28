@@ -3,7 +3,7 @@
 [![Go Version](https://img.shields.io/badge/Go-1.21+-00ADD8?style=flat-square&logo=go&logoColor=white)](https://golang.org/)
 [![SQLite](https://img.shields.io/badge/SQLite-003B57?style=flat-square&logo=sqlite&logoColor=white)](https://www.sqlite.org/)
 [![French Learning](https://img.shields.io/badge/Learning-French-blue?style=flat-square&logo=🇫🇷)](https://reussir-tcfcanada.com/)
-[![Boot.dev Hackathon](https://img.shields.io/badge/Boot.dev-Hackathon%202025-8B4513?style=flat-square)](https://www.boot.dev)
+[![Boot.dev Hackathon](https://img.shields.io/badge/Boot.dev-Hackathon%202025-8B4513?style=flat-square)](https://blog.boot.dev/news/hackathon-2025/)
 
 > A web application for randomized TCF (Test de Connaissance du Français) practice prompts. Built for Boot.dev Hackathon 2025.
 
