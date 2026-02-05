@@ -32,10 +32,22 @@ document.addEventListener('DOMContentLoaded', function() {
                         <span class="task-category">${data.category}</span>
                         <span class="task-type">${data.task_type}</span>
                     </div>
-                    <div class="task-scenario-compact">
+                    <!--div class="task-scenario-compact">
                         <span class="scenario-label">Scenario:</span>
                         <span class="${scenarioClass}">${data.scenario_category}</span>
+                    </div-->
+
+                    <div class="task-scenario-compact">
+                        <fieldset class="${scenarioClass}">
+                            <legend>Scenario:</legend>
+                            <span>${data.scenario_category}</span>
+                        </fieldset>
                     </div>
+                    
+                    <!--fieldset class="task-scenario-compact ${scenarioClass}">
+                        <legend>Scenario:</legend>
+                        <span>${data.scenario_category}</span>
+                    </fieldset-->
                 </div>
                 <div class="task-prompt">
                     <h3>Your TCF Prompt:</h3>

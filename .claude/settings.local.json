@@ -1,0 +1,17 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(sqlite3:*)",
+      "Bash(where:*)",
+      "Bash(./gradlew.bat assembleDebug:*)",
+      "Bash(# Check if Android Studio has a bundled gradle ls \"\"C:/Program Files/Android/\"\" ; ls \"\"C:/Users/shira/AppData/Local/Android/\"\" ; ls \"\"C:/Users/shira/.gradle/wrapper/dists/\"\")",
+      "Bash(# Check for Gradle wrapper jars cached by Android Studio find \"\"C:/Users/shira/.gradle/wrapper/dists/\"\" -name \"\"gradle-wrapper.jar\"\")",
+      "Bash(# Look for any gradle executable in Android Studio''s installation find \"\"C:/Program Files/Android/Android Studio/\"\" -name \"\"gradle.bat\"\" -o -name \"\"gradle.exe\"\")",
+      "Bash(\"C:/Users/shira/AppData/Local/Android/Sdk/emulator/emulator.exe\" -list-avds)",
+      "Bash(pip install:*)",
+      "Bash(sqlite-utils tables:*)",
+      "Bash(python3:*)",
+      "Bash(# First, let''s find Room''s generated schema hash from the build find \"\"C:/Users/shira/PractS/tcf-practice-tracker/tcf-practice-tracker-android/app/build\"\" -name \"\"*.json\"\" -path \"\"*schemas*\"\")"
+    ]
+  }
+}

@@ -3,7 +3,7 @@
 [![Go Version](https://img.shields.io/badge/Go-1.21+-00ADD8?style=flat-square&logo=go&logoColor=white)](https://golang.org/)
 [![SQLite](https://img.shields.io/badge/SQLite-003B57?style=flat-square&logo=sqlite&logoColor=white)](https://www.sqlite.org/)
 [![French Learning](https://img.shields.io/badge/Learning-French-blue?style=flat-square&logo=🇫🇷)](https://reussir-tcfcanada.com/)
-[![Boot.dev Hackathon](https://img.shields.io/badge/Boot.dev-Hackathon%202025-8B4513?style=flat-square)](https://blog.boot.dev/news/hackathon-2025/)
+[![Boot.dev Hackathon](https://img.shields.io/badge/Boot.dev-Hackathon%202025-8B4513?style=flat-square)](https://www.boot.dev)
 
 > A web application for randomized TCF (Test de Connaissance du Français) practice prompts. Built for Boot.dev Hackathon 2025.
 
@@ -23,8 +23,10 @@ TCF Roulette is a simple yet elegant web application that helps French language 
 
 ## 🛠️ Tech Stack
 
-- **Backend:** Go 1.24+ with `net/http` + SQLite with `modernc.org/sqlite` (pure Go driver)
-- **Frontend:** Vanilla HTML, CSS, JavaScript + CSS3 with gradients, etc
+- **Backend:** Go 1.24+ with `net/http`
+- **Database:** SQLite with `modernc.org/sqlite` (pure Go driver)
+- **Frontend:** Vanilla HTML, CSS, JavaScript
+- **Styling:** CSS3 with gradients and modern design patterns
 
 ## 🚀 Quick Start
 
@@ -51,8 +53,6 @@ go run main.go # you might need to click "Allow" on the warning that pops up bef
 # Linux: xdg-open http://localhost:8080
 ```
 
-**See [`auxil/deployment.md`](./auxil/deployment.md) for deployment options.**
-
 ## 📂 Project Structure
 
 ```
@@ -68,6 +68,76 @@ tcf-practice-tracker/
     └── tcf.db           # SQLite database (your data)
 ```
 
+## 🚀 Deployment Options
+
+### 1. Local Production Build
+
+**Windows:**
+```powershell
+# Build executable
+go build -o tcf-tracker.exe
+
+# Run production server
+.\tcf-tracker.exe
+```
+
+**macOS/Linux:**
+```bash
+# Build executable
+go build -o tcf-tracker
+
+# Run production server
+./tcf-tracker
+```
+
+### 2. Cloud Deployment
+
+#### **Heroku**
+```bash
+# Create Procfile
+echo "web: ./tcf-tracker" > Procfile
+
+# Deploy
+git push heroku main
+```
+
+#### **Railway**
+```bash
+# Just push to Git - Railway auto-detects Go
+git push origin main
+```
+
+#### **DigitalOcean App Platform**
+1. Upload your code to GitHub
+2. Connect DigitalOcean to your repository
+3. Select Go as runtime
+4. Deploy automatically
+
+#### **VPS/Traditional Server**
+```bash
+# Build for Linux (if developing on Windows/Mac)
+GOOS=linux GOARCH=amd64 go build -o tcf-tracker
+
+# Upload tcf-tracker + templates/ + static/ + data/ to server
+# Run with systemd or similar service manager
+```
+
+### 3. Docker Deployment
+```dockerfile
+FROM golang:1.24-alpine AS builder
+WORKDIR /app
+COPY . .
+RUN go build -o tcf-tracker
+
+FROM alpine:latest
+RUN apk --no-cache add ca-certificates
+WORKDIR /root/
+COPY --from=builder /app/tcf-tracker .
+COPY --from=builder /app/templates ./templates
+COPY --from=builder /app/static ./static
+COPY --from=builder /app/data ./data
+CMD ["./tcf-tracker"]
+```
 
 ## 🔮 What's Next
 
@@ -78,11 +148,19 @@ tcf-practice-tracker/
 - [ ] **⏱️ Session Management** - Timer and study session summaries
 - [ ] **🌐 GitHub Pages Version** - Frontend-only deployment for easy sharing
 
-**See our comprehensive [Feature Roadmap](./auxil/ROADMAP.md)** for detailed plans.
+### 📋 Full Roadmap
+**See our comprehensive [Feature Roadmap](./auxil/ROADMAP.md)** for detailed plans including:
+- 🔐 User accounts and personalization
+- 🎨 Dark mode and custom themes
+- 📚 Interactive study guides and resources
+- 🎧 Audio prompts and speaking practice
+- 🤖 AI-powered feedback and smart content
+- 📱 Mobile apps and browser extensions
+- *...and much more!*
 
 ## 🤝 Contributing
 
-Always open to feedback and suggestions! Feel free to:
+This is my first Go project, so I'm always open to feedback and suggestions! Feel free to:
 
 - 🐛 Report bugs
 - 💡 Suggest features

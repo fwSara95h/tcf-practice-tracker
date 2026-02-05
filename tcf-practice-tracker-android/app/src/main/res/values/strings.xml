@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">TCF Roulette</string>
+    <string name="roll_button">Roll the Dice</string>
+    <string name="app_description">Practice random TCF French exam prompts</string>
+    <string name="your_prompt">Your TCF Prompt:</string>
+    <string name="loading">Loading…</string>
+    <string name="error_loading">Error loading prompt. Please try again.</string>
+    <string name="no_prompt_yet">Press the button to get a random TCF practice prompt!</string>
+    <string name="task_id">Task #%1$d</string>
+    <string name="scenario_label">Scenario</string>
+</resources>
