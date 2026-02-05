@@ -2,10 +2,8 @@
 <data-extraction-rules>
     <cloud-backup>
         <include domain="sharedpref" path="."/>
-        <exclude domain="database" path="tcf.db"/>
     </cloud-backup>
     <device-transfer>
         <include domain="sharedpref" path="."/>
-        <exclude domain="database" path="tcf.db"/>
     </device-transfer>
 </data-extraction-rules>
